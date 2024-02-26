@@ -36,7 +36,7 @@ jobs:
   upload-artifacts:
     needs: build-kernel
     runs-on: ubuntu-latest
-    if: ${{ ( github.event_name != 'pull_request' && github.ref == 'refs/heads/main' ) || github.ref_type == 'tag' || github.ref == 'refs/heads/ci' }}
+    if: ${{ ( github.event_name != 'pull_request' && github.ref == 'refs/heads/main' ) || github.ref_type == 'tag' || github.ref == 'refs/heads/ci' || github.ref == 'refs/heads/emulator-build' }}
     env:
       CHAT_ID: ${{ secrets.CHAT_ID }}
       BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
